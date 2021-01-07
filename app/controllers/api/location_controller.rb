@@ -14,7 +14,7 @@ class Api::V1::LocationController < ApplicationController
     end
 
     def create
-        @location = @location.restaurants.new
+        @location = @location.restaurants.new(location_params)
 
     end
     
