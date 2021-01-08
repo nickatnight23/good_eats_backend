@@ -1,4 +1,4 @@
-class Api::V1::LocationController < ApplicationController
+class Api::V1::LocationsController < ApplicationController
     before_action :set_restaurant
     def index
       @location=  @restaurant.locations
@@ -9,7 +9,7 @@ class Api::V1::LocationController < ApplicationController
 
     def show 
         @location = Location.find(params[:id])
-        render jsob :@location
+        render json :@location
        
     end
 

@@ -1,8 +1,9 @@
 
-    class Api::V1::RestaurantController < ApplicationController
+    class Api::V1::RestaurantsController < ApplicationController
 
         def index
             @restaurants = Restaurant.all
+            byebug
             render json: @restaurants
     
         end
@@ -12,7 +13,7 @@
             if @restaurant.save
                 render json: @restaurant
             else
-                render json {error:'error creating Restaurant'}
+                render json: {error:'error creating Restaurant'}
         end
     end
     
@@ -34,4 +35,4 @@
         end
     
     end
-end
+

@@ -1,5 +1,5 @@
 class RestaurantSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :location_id
 
-  has_many :restaurants
+ belongs_to :location
 end
