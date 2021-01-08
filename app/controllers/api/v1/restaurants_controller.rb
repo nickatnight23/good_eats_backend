@@ -2,11 +2,10 @@
     class Api::V1::RestaurantsController < ApplicationController
 
         def index
-            @restaurants = Restaurant.all
-            byebug
-            render json: @restaurants
-    
+            restaurants = Restaurant.all
+         render:json => restaurants.to_json(:include => :location)
         end
+    
     
         def create
             @restaurant = Restaurant.new(restaurant_params)
@@ -14,11 +13,14 @@
                 render json: @restaurant
             else
                 render json: {error:'error creating Restaurant'}
+            end
         end
-    end
     
         def show 
             @restaurant= Restaurant.find(params[:id])
+            options = {
+             include: [:location]
+    }
             render json: @restaurant
         end
         
