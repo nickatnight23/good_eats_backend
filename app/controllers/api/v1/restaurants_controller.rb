@@ -2,12 +2,13 @@
     class Api::V1::RestaurantsController < ApplicationController
 
         def index
-            restaurants = Restaurant.all
-         render:json => restaurants.to_json(:include => :location)
+            @restaurants = Restaurant.all
+         render json: @restaurants
         end
     
     
         def create
+            
             @restaurant = Restaurant.new(restaurant_params)
             if @restaurant.save
                 render json: @restaurant
@@ -18,11 +19,12 @@
     
         def show 
             @restaurant= Restaurant.find(params[:id])
-            options = {
-             include: [:location]
-    }
+            if @restaurant.present?
             render json: @restaurant
+            else
+                render json: {error:'error showing Restaurant'}
         end
+    end
         
         def destroy
             @restaurant= Restaurant.find(params[:id])

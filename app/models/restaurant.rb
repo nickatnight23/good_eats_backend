@@ -1,4 +1,7 @@
 class Restaurant < ApplicationRecord
-    belongs_to :location
-    has_one_attached :image_url
+    # include ActiveModel::Serialization
+
+    # attr_accessor :name, :description, :id
+  
+   
 end
