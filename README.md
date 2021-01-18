@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application is a simple restaurant app that allows you to add your favorite restaurants.
+It is simple because it has helped me to better understand certain concepts with React and Redux.
+I have an about page, contact page, restaurant form, restaurant list and a footer page.
+Creating each of those pages showed me how to use react router and how the process flows between each component.
